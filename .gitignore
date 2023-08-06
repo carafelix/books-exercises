@@ -1,3 +1,4 @@
 .vscode
 node_modules
 *.json
+own-exercises/.vscode/settings.json
