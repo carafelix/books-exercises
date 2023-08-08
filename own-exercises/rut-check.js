@@ -1,13 +1,35 @@
 function rutCheck( rut ){
 
-  const numToCheck = rut.split('-')[0];
+  const checkDigit = rut.split('-')[1];
+  const dropHyphen = rut.split('-')[0];
 
+  const factorObj = {
+    '0': 2,
+    '1': 3,
+    '2': 4,
+    '3': 5,
+    '4': 6,
+    '5': 7,
+  }
+
+  const double = dropHyphen.split('').reverse().map( (n,i) => {
+    
+
+    if (i>=6){
+      const times = i%6;
+      i = times;
+    }
+
+    return n * factorObj[i] 
+
+  } );
   
+  return double
 
 }
 
 
-rutCheck('19893945-5')
+console.log(rutCheck('19893945-5'))
 
 // https://es.wikipedia.org/wiki/C%C3%B3digo_de_control 
 
@@ -21,6 +43,7 @@ function luhnCheck( numStr ){  // convetion on check digit after '-'
 
   const checkDigit = numStr.split('-')[1]
   const dropHyphen = numStr.split('-')[0];
+
   const double = dropHyphen.split('').reverse().map( (n,i) => {
     if ( i === 0 || i%2 === 0){
       return n = +n * 2
@@ -43,5 +66,5 @@ function luhnCheck( numStr ){  // convetion on check digit after '-'
 
 }
 
-console.log(luhnCheck('7992739871-3'))
+// console.log(luhnCheck('7992739871-3'))
  
