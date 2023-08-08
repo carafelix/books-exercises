@@ -7,24 +7,40 @@ function rutCheck( rut ){
     
     const times = i%6;
 
-    console.log(times)
-    
     if (i>=6){
       i = times;
       return n * (times+2)
-    } else return n*(i+2)
+    } else return n * (i+2)
 
 
   } );
-  
-  return double
+    
+    const sumRUT = double.reduce((acc,n)=>+acc + +n);
+    const finalNum = 11  - (sumRUT  % 11)
+
+
+      function processCheckDigit(n){
+        if (n === 10){
+          return 'k'
+        } else if (n === 11){
+          return '0'
+        } else return `${n}`
+      }
+
+    if( processCheckDigit(finalNum) === checkDigit){
+      
+      return true
+
+    } else return false
+
 
 }
 
 
-console.log(rutCheck('19893945-5'))
+console.log(rutCheck('78855765-0'))
 
 // https://es.wikipedia.org/wiki/C%C3%B3digo_de_control 
+// https://validarutchile.cl/calcular-digito-verificador.php
 
 // rut es mod 11. Is a deviation from lunh algorithm mod 10. that has a few flaws listed on wikipedia
 
@@ -45,7 +61,7 @@ function luhnCheck( numStr ){  // convetion on check digit after '-'
   const separate = [];
     for (n of double){                 // 'in' points key/"index", 'of' points values
       if (n<=9){
-        separate.push(n)
+        separate.push(`${n}`)
       } else{
         separate.push(...(`${n}`.split('')))
       }
