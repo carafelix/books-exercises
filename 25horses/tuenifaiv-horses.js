@@ -123,11 +123,7 @@ function runRace(){
     podium.pop();
     podium.pop();
 
-    // console.log(podium)
-
-    //check 
     const fastHorses = horses.sort((a,b)=>(a.speed <= b.speed) ? 1 : -1);
-    // console.log('\n\ncheck\n\n',fastHorses[0],'\n',fastHorses[1],'\n',fastHorses[2],'\n','\ncheck\n');
     
     return {
         race: [      podium[0].name,        podium[1].name,      podium[2].name],
@@ -139,6 +135,7 @@ function runRace(){
     for(let i=0; i<1000000;i++){
         let hipodromo = runRace();
         assert.deepEqual( hipodromo.race,    hipodromo.guaranteed,   'hermanito q paso');
+        // console.log(hipodromo)
     }
 
 
