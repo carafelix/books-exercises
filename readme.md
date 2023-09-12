@@ -1,0 +1,1 @@
+Code Exercises that are not codewars 
