@@ -90,7 +90,7 @@ function runRace(){
         return r1
     }
 
-    const popFirstRoundPlaces = poppinLasts(firstRound);
+    const firstRoundTrimmed = poppinLasts(firstRound);
 
 
     function getFirstPlaces(r1){
@@ -103,7 +103,7 @@ function runRace(){
             return firsts.sort((a,b)=> a.speed<=b.speed ? 1 : -1 )
     }
 
-    const secondRound = getFirstPlaces(popFirstRoundPlaces); // 6 race
+    const secondRound = getFirstPlaces(firstRoundTrimmed); // 6 race
     secondRound.pop();
     secondRound.pop();
 
@@ -118,7 +118,7 @@ function runRace(){
 
 
 
-    const podium = [fp].concat(thirdRace(secondRound , popFirstRoundPlaces));
+    const podium = [fp].concat(thirdRace(secondRound , firstRoundTrimmed));
     podium.pop();
     podium.pop();
     podium.pop();
