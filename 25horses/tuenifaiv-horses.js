@@ -4,7 +4,7 @@ const chai = require("chai");
 const assert = chai.assert;
 
 
-const horseNames = require('./horses.json').horses
+const horseNames = require('./horses.json').horses // dumb ass it can be just an array lol no need to make an arr inside an obj xD
 const groups = ["A","B","C","D","E"];
 
 // speed for horses avarage range between 32-49km/hr. so range in meters is between 8.8m/s and 13.6m/s 
