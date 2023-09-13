@@ -24,7 +24,7 @@ class Horse{
 function runRace(){
 
 
-    function getHorses(){
+    function getHorses(){ // must refactor those check loops + all that jazz into a simple hash (!horse[name]) etc
         const preHorses = [];
         for(let i=0;i<25;i++){
 
