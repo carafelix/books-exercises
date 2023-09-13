@@ -1,4 +1,4 @@
-// Máximo común divisor. 
+// Máximo común divisor. GCD = greatest common divisor. HCF = higest common factor 
 // el numero más grande q los divide a los dos.
 
 function findHCF(n1,n2){
