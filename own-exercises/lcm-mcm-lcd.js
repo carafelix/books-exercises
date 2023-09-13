@@ -1,28 +1,11 @@
 // minimo común multiplo, least common multiple
 // el numero más cercano en que se encuentran dos numeros
 
-function findLCM(n1,n2){ //bruteforce SUPER SLOW
-    let lcm = (n1>n2) ? n1 : n2;
-    while('sexever'){
-        if (lcm % n1 == 0 && lcm % n2 == 0){
-            return lcm
-        }
-
-        lcm++;
-    }
-}
-console.log(new Date());
-
-// console.log(findLCM(800,2993))
-// console.log(findLCM(81923,1283891))
-// console.log(findLCM(83219,23))
-// console.log(findLCM(230,10))
-// console.log(findLCM(1230,20))
 
 const primes = require('./primes.json');
 
 
-function primeLCM(n1,n2){
+function primeLCM(n1,n2){ // O(log2n)
     const L = [];
 
     while('foreverland'){
@@ -43,8 +26,6 @@ function primeLCM(n1,n2){
             n2 /= div;
             L.push(div)
         }
-        
-
     }
     
 
@@ -53,4 +34,23 @@ console.log(new Date());
 
 // console.log(primeLCM(800,2993));
 console.log(primeLCM(81923,1283891));
-console.log(new Date());
+console.log(primeLCM(1982389123,349812334));
+console.log(primeLCM(1239,8765));
+console.log(primeLCM(82,1237985));
+console.log(primeLCM(89472387,5512389128938912391235128938891));
+console.log(primeLCM(81783923,1444281928371928373891));
+console.log(primeLCM(81783921239012398192833,1444281928371928373891));
+
+
+
+function findLCM(n1,n2){ //bruteforce SUPER SLOW
+    let lcm = (n1>n2) ? n1 : n2;
+    while('sexever'){
+        if (lcm % n1 == 0 && lcm % n2 == 0){
+            return lcm
+        }
+
+        lcm++;
+    }
+}
+
