@@ -1,3 +1,6 @@
+// Máximo común divisor. 
+// el numero más grande q los divide a los dos.
+
 function findHCF(n1,n2){
     let h = (n1>n2) ? n1 : n2;
     let l = (n1<n2) ? n1 : n2;
